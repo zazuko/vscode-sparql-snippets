@@ -1,0 +1,110 @@
+{
+  "VALUES ($x)": {
+    "scope": "sparql",
+    "prefix": "VALUES ($var)",
+    "body": "VALUES (?$1) {\n\t($2)\n}\n",
+    "description": "VALUES with one variable"
+  },
+  "VALUES (?x ?y)": {
+    "scope": "sparql",
+    "prefix": "VALUES (?x ?y)",
+    "body": "VALUES (?$1 ?$2) {\n\t($3)\n\t($4 UNDEF)\n}\n",
+    "description": "VALUES with multible variables"
+  },
+  "BIND": {
+    "scope": "sparql",
+    "prefix": "BIND",
+    "body": "BIND ($1 AS ?$2)",
+    "description": "BIND"
+  },
+  "FILTER NOT EXISTS": {
+    "scope": "sparql",
+    "prefix": "FILTER NOT EXISTS",
+    "body": "FILTER NOT EXISTS { ?$1 $2 ?$3 }",
+    "description": "Filter"
+  },
+  "MINUS": {
+    "scope": "sparql",
+    "prefix": "MINUS",
+    "body": "MINUS {\n\t?$1 $2 $3 .\n}",
+    "description": "MINUS"
+  },
+  "SUM": {
+    "scope": "sparql",
+    "prefix": "SUM",
+    "body": "(sum(?$1) AS ?$2)",
+    "description": "SUM"
+  },
+  "FILTER": {
+    "scope": "sparql",
+    "prefix": "FILTER",
+    "body": "FILTER(?$1 $2 ?$3)",
+    "description": "FILTER"
+  },
+  "All Named Graphs": {
+    "scope": "sparql",
+    "prefix": "All named graphs",
+    "body": "SELECT DISTINCT ?g WHERE {\n\tGRAPH ?g { ?s ?p ?o \n}\n}",
+    "description": "Query all named graphs"
+  },
+  "sh": {
+    "scope": "sparql",
+    "prefix": "PREFIX sh:",
+    "body": "PREFIX sh: <http://www.w3.org/ns/shacl#>",
+    "description": "SHACL prefix"
+  },
+  "rdfs": {
+    "scope": "sparql",
+    "prefix": "PREFIX rdfs:",
+    "body": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>",
+    "description": "RDFS prefix"
+  },
+  "rdf": {
+    "scope": "sparql",
+    "prefix": "PREFIX rdf:",
+    "body": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+    "description": "RDF prefix"
+  },
+  "schema": {
+    "scope": "sparql",
+    "prefix": "PREFIX schema:",
+    "body": "PREFIX schema: <https://schema.org/>\n#Warning: HTTPS",
+    "description": "schema.org prefix"
+  },
+  "xsd": {
+    "scope": "sqarql",
+    "prefix": "PREFIX xsd:",
+    "body": "PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>",
+    "description": "XSD namespace"
+  },
+  "prefix": {
+    "scope": "sparql",
+    "prefix": "PREFIX",
+    "body": "PREFIX $1: <$2>",
+    "description": "Prefix definition"
+  },
+  "pragmaCDB": {
+    "scope": "sparql",
+    "prefix": "#paragma CDB",
+    "body": "#pragma describe.strategy cbd",
+    "description": "Describe strategy CBD - Concise Bounded Description"
+  },
+  "cube_path": {
+    "scope": "sparql",
+    "prefix": "cube path",
+    "body": "PREFIX schema: <http://schema.org/>\nPREFIX sh: <http://www.w3.org/ns/shacl#>\nPREFIX cube: <https://cube.link/>\n\nSELECT ?parent ?child WHERE {\n\t<$1> sh:property ?prop.\n\n\t?prop cube:inHierarchy ?hierarchy.\n\t?hierarchy sh:path/sh:inversePath ?inversePath.\n\t?hierarchy sh:path ?directPath.\n\n\t{\n\t\t?hierarchy cube:meta/root ?parent.\n\t\t?child ?inversePath ?parent.\n\t}\n\tUNION\n\t{\n\t\t?hierarchy cube:meta/root ?parent.\n\t\t?parent ?directPath ?child.\n\t}\n}",
+    "description": "cube path and inverse path"
+  },
+  "select": {
+    "scope": "sparql",
+    "prefix": "SELECT",
+    "body": "SELECT $1 WHERE {\n\t$2\n}",
+    "description": "SELECT statement"
+  },
+  "construct": {
+    "scope": "sparql",
+    "prefix": "CONSTRUCT",
+    "body": "CONSTRUCT {\n\t$2\n} WHERE {\n\t$1\n}",
+    "description": "CONSTRUCT statement"
+  }
+}
