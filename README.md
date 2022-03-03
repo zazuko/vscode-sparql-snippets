@@ -12,6 +12,10 @@ We recommend using it in conjunction with the [Stardog RDF Grammars](https://mar
 
 Start typing a SPARQL query and choose one of the available snippets. 
 
+## Installation
+
+You can install it directly from the Visual Studio Code Extension tab. It is available on the [Marketplace](https://marketplace.visualstudio.com/items?itemName=Zazuko.sparql-snippets)
+
 ## Add a snippet
 
 To add more snippets, simply add it to `snippets/snippets.code-snippets`.
