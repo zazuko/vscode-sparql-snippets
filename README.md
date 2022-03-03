@@ -1,4 +1,4 @@
-# SPARQL-snippets README
+# VSCode SPARQL snippets
 
 This extension provides *SPARQL code snippets* for [Visual Studio Code](https://code.visualstudio.com).
 
