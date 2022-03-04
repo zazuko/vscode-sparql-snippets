@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-sparql-snippets" extension will be documented in this file.
 
+## 0.0.3
+
+Update single VALUES template
+
 ## 0.0.2
 
 Changes in readme.md
