@@ -1,8 +1,8 @@
 {
   "VALUES ($x)": {
     "scope": "sparql",
-    "prefix": "VALUES ($var)",
-    "body": "VALUES (?$1) {\n\t($2)\n}\n",
+    "prefix": "VALUES $x",
+    "body": "VALUES ?$1 { $2 }\n",
     "description": "VALUES with one variable"
   },
   "VALUES (?x ?y)": {
