@@ -83,13 +83,13 @@
     "body": "PREFIX $1: <$2>",
     "description": "Prefix definition"
   },
-  "pragmaCDB": {
+  "pragma cdb": {
     "scope": "sparql",
-    "prefix": "#paragma CDB",
+    "prefix": "#pragma CDB",
     "body": "#pragma describe.strategy cbd",
     "description": "Describe strategy CBD - Concise Bounded Description"
   },
-  "cube_path": {
+  "cube path": {
     "scope": "sparql",
     "prefix": "cube path",
     "body": "PREFIX schema: <http://schema.org/>\nPREFIX sh: <http://www.w3.org/ns/shacl#>\nPREFIX cube: <https://cube.link/>\n\nSELECT ?parent ?child WHERE {\n\t<$1> sh:property ?prop.\n\n\t?prop cube:inHierarchy ?hierarchy.\n\t?hierarchy sh:path/sh:inversePath ?inversePath.\n\t?hierarchy sh:path ?directPath.\n\n\t{\n\t\t?hierarchy cube:meta/root ?parent.\n\t\t?child ?inversePath ?parent.\n\t}\n\tUNION\n\t{\n\t\t?hierarchy cube:meta/root ?parent.\n\t\t?parent ?directPath ?child.\n\t}\n}",
@@ -104,7 +104,25 @@
   "construct": {
     "scope": "sparql",
     "prefix": "CONSTRUCT",
-    "body": "CONSTRUCT {\n\t$2\n} WHERE {\n\t$1\n}",
+    "body": "CONSTRUCT {\n\t$1\n} WHERE {\n\t$2\n}",
     "description": "CONSTRUCT statement"
+  },
+  "ask": {
+    "scope": "sparql",
+    "prefix": "ASK",
+    "body": "ASK {\n\t$1\n}",
+    "description": "ASK statement"
+  },
+  "describe": {
+    "scope": "sparql",
+    "prefix": "DESCRIBE",
+    "body": "DESCRIBE ",
+    "description": "DESCRIBE statement"
+  },
+  "describe where": {
+    "scope": "sparql",
+    "prefix": "DESCRIBE WHERE",
+    "body": "DESCRIBE $1 WHERE {\n\t$2\n}",
+    "description": "DESCRIBE with WHERE statement"
   }
 }

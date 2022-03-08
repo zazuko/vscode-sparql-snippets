@@ -3,7 +3,7 @@
     "displayName": "SPARQL Snippets",
     "description": "SPARQL snippets to make you more productive.",
     "publisher": "Zazuko",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "preview": false,
     "license": "SEE LICENSE IN LICENSE.md",
     "icon": "images/zazuko.png",
